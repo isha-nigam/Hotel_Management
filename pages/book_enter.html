@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Insert Entry {% endblock title %}
+	{% block body %}
+	<body style='background-color:#808080;'>
+		<h1 ALIGN='CENTER'> Insert Entry <H1><HR>
+		<h3> <a href='.'> Home </a> </h3>
+		<DIV align='center'> 
+			<form action='insert_entry' method='post'>
+			{% csrf_token %}
+				<input type='text' name='guest_name' 
+				placeholder='Enter Your Name' required>
+				<br><br>
+				<input type="tel" name="guest_num" placeholder="1234-56-7890" pattern="[0-9]{4}[0-9]{2}[0-9]{4}" required>
+				<br><br>
+				<input type='number' name='guest_id' 
+				placeholder='Enter Your ID/Aadhar No.' required>
+				<br><br>
+				<div align='center'>
+				<select name="guest_room">
+				<option value=" ">--Select Rooms--</option>
+				<option>Imperial Room</option>
+				<option>Executive Room</option>
+				<option>Club Room</option>
+				<option>Hospitality Room</option>
+				</select>
+				</div><br><br>
+				<h3> Enter Your Resedential Address here...</h3>
+				<textarea placeholder='Enter Your Address !!!'
+				name='address' cols='50' rows='3' >
+				</textarea>
+				<br><br>
+				<input type='submit' value='Insert Entries'>
+			</form>
+		{{msg}}
+		</DIV>
+	{% endblock body %}

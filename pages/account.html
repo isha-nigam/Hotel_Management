@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Create Account {% endblock title %}
+	{% block body %}
+	<body style='background-color:#808080;'>
+		<h1 ALIGN='CENTER'> Create Receptionist Account <H1><HR>
+		<h3> <a href='home'> Back </a> </h3>
+		<DIV align='center'>
+			<h2>To Create a Receptionist Account Fill the Below Details...</h2>
+			<form action='create_account' method='post'>
+			{% csrf_token %}
+				<input type='text' name='ruser' placeholder='Enter Username' required>
+				<br><br>
+				<input type='text' name='rname' placeholder='Enter Your Name' required>
+				<br><br>
+				<input type='email' name='rmail' placeholder='Enter Your email-id' required>
+				<br><br>
+				<input type="tel" name="rcontact" placeholder="1234-56-7890" pattern="[0-9]{4}[0-9]{2}[0-9]{4}" required>
+				<br><br>
+				<input type='password' name='rpass' placeholder='Enter Password' required>
+				<br><br>
+				<input type='submit' value='Create Account'>
+			</form>
+		{{msg}}
+		</DIV>
+	{% endblock body %}

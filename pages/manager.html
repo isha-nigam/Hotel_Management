@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} HOTEL MANAGEMENT {% endblock title %}
+	{% block body %}
+	<body style= "background-image: url('/static/download.jpg');">
+		<h1 ALIGN='CENTER'>Manager Login<H1><HR>
+		<a href='\'> Home </a>
+		<DIV align='center'> 
+			<form action='mlogin' method='post'>
+			{% csrf_token %}
+				<b>Username:</b><input type='text' name='muser' placeholder='Enter Username' required>
+				<br><br>
+				<b>Password:</b><input type='password' name='mpass' placeholder='Enter Password' required>
+				<br><br>
+				<input type='submit' value='login'>
+			</form>
+		{{error}}
+		</DIV>
+	{% endblock body %}
